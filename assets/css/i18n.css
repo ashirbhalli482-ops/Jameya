@@ -1,0 +1,143 @@
+/**
+ * i18n CSS - Ensures navbar and sidebar never change position
+ * Only content area can have RTL direction
+ */
+
+/* Ensure navbar and sidebar always stay LTR (left-to-right) */
+.navbar,
+.navbar *,
+.sidebar,
+.sidebar *,
+.sidebar-offcanvas,
+.sidebar-offcanvas *,
+.navbar-menu-wrapper,
+.navbar-nav,
+.navbar-nav-right,
+.navbar-brand-wrapper,
+.container-scroller,
+.page-body-wrapper {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+/* Sidebar specific - ensure it never changes */
+.sidebar .nav,
+.sidebar .nav-item,
+.sidebar .nav-link,
+.sidebar .menu-title,
+.sidebar .menu-icon,
+.sidebar .sub-menu {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+/* Navbar specific - ensure it never changes */
+.navbar .navbar-nav,
+.navbar .nav-item,
+.navbar .nav-link,
+.navbar .dropdown-menu {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+/* Content area can have RTL for Arabic */
+.rtl-content {
+  direction: rtl;
+  text-align: right;
+}
+
+.rtl-content * {
+  direction: rtl;
+  text-align: right;
+}
+
+/* But keep some elements LTR even in RTL content (like numbers, codes) */
+.rtl-content input[type="number"],
+.rtl-content .card-number,
+.rtl-content .cvv,
+.rtl-content .expiry-date,
+.rtl-content code,
+.rtl-content pre {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Ensure flexbox layouts in navbar/sidebar don't reverse */
+.navbar .d-flex,
+.sidebar .d-flex {
+  flex-direction: row !important;
+}
+
+/* Language switcher in sidebar - keep it LTR */
+.sidebar [data-lang] {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+/* Override any RTL classes that might affect navbar/sidebar */
+body.rtl-body .navbar,
+body.rtl-body .sidebar,
+html[dir="rtl"] .navbar,
+html[dir="rtl"] .sidebar {
+  direction: ltr !important;
+  left: 0 !important;
+  right: auto !important;
+}
+
+/* Ensure dropdowns in navbar stay LTR */
+.navbar .dropdown-menu {
+  left: auto !important;
+  right: 0 !important;
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+/* Content cards and sections can be RTL */
+.rtl-content .card,
+.rtl-content .card-body,
+.rtl-content .card-title,
+.rtl-content h1,
+.rtl-content h2,
+.rtl-content h3,
+.rtl-content h4,
+.rtl-content h5,
+.rtl-content h6,
+.rtl-content p,
+.rtl-content span,
+.rtl-content div:not(.navbar):not(.sidebar):not(.navbar *):not(.sidebar *) {
+  direction: rtl;
+  text-align: right;
+}
+
+/* But preserve LTR for specific elements that should always be LTR */
+.rtl-content input[type="text"]:not([data-keep-ltr]),
+.rtl-content textarea:not([data-keep-ltr]) {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Keep icons and buttons aligned properly */
+.rtl-content .btn i,
+.rtl-content .icon {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+.rtl-content .btn i:first-child {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+/* Ensure form inputs in content area work with RTL */
+.rtl-content .form-control,
+.rtl-content .form-label {
+  direction: rtl;
+  text-align: right;
+}
+
+/* But keep card numbers and CVV LTR */
+.rtl-content input[data-keep-ltr="true"] {
+  direction: ltr !important;
+  text-align: left !important;
+}
+

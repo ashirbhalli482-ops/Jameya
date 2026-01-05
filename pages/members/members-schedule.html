@@ -213,7 +213,28 @@
     <script src="../../assets/vendors/datatables.net/jquery.dataTables.js"></script>
     <!-- <script src="../../assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script> -->
     <script src="../../assets/vendors/datatables.net-bs5/dataTables.bootstrap5.js"></script>
-    <script src="../../assets/js/dataTables.select.min.js"></script>
+    <script>
+      // Ensure jQuery and DataTables are loaded before dataTables.select
+      (function() {
+        function loadDataTablesSelect() {
+          if (typeof jQuery !== 'undefined' && typeof jQuery.fn.dataTable !== 'undefined') {
+            var script = document.createElement('script');
+            script.src = '../../assets/js/dataTables.select.min.js';
+            script.onerror = function() {
+              console.warn('dataTables.select.min.js failed to load, but continuing...');
+            };
+            document.head.appendChild(script);
+          } else {
+            setTimeout(loadDataTablesSelect, 50);
+          }
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', loadDataTablesSelect);
+        } else {
+          loadDataTablesSelect();
+        }
+      })();
+    </script>
     <!-- End plugin js for this page -->
     <!-- inject:js -->
     <script src="../../assets/js/off-canvas.js"></script>

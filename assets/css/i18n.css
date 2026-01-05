@@ -84,6 +84,64 @@ html[dir="rtl"] .sidebar {
   right: auto !important;
 }
 
+/* Ensure sidebar-offcanvas responsive behavior works for both languages */
+/* This ensures the sidebar slides in from the right on mobile, regardless of language */
+@media screen and (max-width: 991px) {
+  /* Ensure sidebar-offcanvas positioning is not affected by RTL - works for all cases */
+  .sidebar-offcanvas {
+    position: fixed !important;
+    max-height: calc(100vh - 60px) !important;
+    top: 60px !important;
+    bottom: 0 !important;
+    overflow: auto !important;
+    right: -235px !important;
+    left: auto !important;
+    -webkit-transition: all 0.25s ease-out !important;
+    -o-transition: all 0.25s ease-out !important;
+    transition: all 0.25s ease-out !important;
+    direction: ltr !important;
+  }
+  
+  /* Override any RTL-specific positioning that might interfere */
+  body.rtl-body .sidebar-offcanvas,
+  html[dir="rtl"] .sidebar-offcanvas,
+  .rtl-content ~ .page-body-wrapper .sidebar-offcanvas,
+  .rtl-body .page-body-wrapper .sidebar-offcanvas {
+    right: -235px !important;
+    left: auto !important;
+    direction: ltr !important;
+  }
+  
+  /* Active state - sidebar slides in from right (works for all languages) */
+  .sidebar-offcanvas.active {
+    right: 0 !important;
+    left: auto !important;
+  }
+  
+  /* Ensure active state works correctly with RTL body */
+  body.rtl-body .sidebar-offcanvas.active,
+  html[dir="rtl"] .sidebar-offcanvas.active,
+  .rtl-content ~ .page-body-wrapper .sidebar-offcanvas.active,
+  .rtl-body .page-body-wrapper .sidebar-offcanvas.active {
+    right: 0 !important;
+    left: auto !important;
+  }
+  
+  /* Ensure main-panel behavior is consistent for both languages */
+  .main-panel {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+  }
+  
+  body.rtl-body .main-panel,
+  html[dir="rtl"] .main-panel {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+  }
+}
+
 /* Ensure dropdowns in navbar stay LTR */
 .navbar .dropdown-menu {
   left: auto !important;

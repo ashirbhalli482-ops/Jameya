@@ -51,7 +51,7 @@
           <i class="icon-bell mx-0"></i>
           <span class="count"></span>
         </a>
-        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+        <!-- <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
           <p class="mb-0 font-weight-normal float-left dropdown-header" data-i18n="navbar.notifications">Notifications</p>
           <a class="dropdown-item preview-item">
             <div class="preview-thumbnail">
@@ -86,7 +86,7 @@
               <p class="font-weight-light small-text mb-0 text-muted"> 2 <span data-i18n="navbar.daysAgo">days ago</span> </p>
             </div>
           </a>
-        </div>
+        </div> -->
       </li>
       <li class="nav-item nav-profile dropdown">
         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
@@ -235,14 +235,14 @@
                       <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
                         <div class="mb-3 mb-md-0 w-100 w-md-auto">
                           <h2 class="mb-2 fw-bold text-primary" style="color: #1e3a8a; font-size: clamp(1.5rem, 4vw, 2rem);">
-                            <i class="ti-credit-card me-2 d-none d-sm-inline"></i><span data-i18n="payment.payMonthlyInstallment">Pay Your Monthly Installment</span>
+                            <i class="ti-credit-card me-2 d-none d-sm-inline"></i>Pay Your Monthly Installment
                           </h2>
                           <div class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center gap-2 gap-sm-3 mt-2 mt-md-3">
                             <div class="badge bg-primary bg-gradient px-3 py-2" style="font-size: clamp(0.85rem, 2vw, 0.95rem);">
-                              <i class="ti-money me-2"></i><span data-i18n="payment.amountDue">Amount Due</span>
+                              <i class="ti-money me-2"></i>Amount Due
                             </div>
                             <div class="d-flex align-items-center">
-                              <span class="text-muted me-2" style="font-size: clamp(0.95rem, 2.5vw, 1.1rem);" data-i18n="payment.totalAmount">Total Amount:</span>
+                              <span class="text-muted me-2" style="font-size: clamp(0.95rem, 2.5vw, 1.1rem);">Total Amount:</span>
                               <span class="fw-bold text-primary" style="color: #1e3a8a; font-size: clamp(1.25rem, 3vw, 1.5rem);">200 OMR</span>
                             </div>
                           </div>
@@ -271,15 +271,15 @@
                           <span class="fw-bold text-success" style="font-size: clamp(16px, 4vw, 20px);">M</span>
                         </div>
                         <div class="flex-grow-1">
-                          <h5 class="mb-0 text-white fw-bold" style="font-size: clamp(1rem, 3vw, 1.25rem);" data-i18n="payment.debitCard">Debit Card</h5>
-                          <small class="text-white opacity-75 d-none d-sm-block" data-i18n="payment.securePaymentGateway">Secure Payment Gateway</small>
+                          <h5 class="mb-0 text-white fw-bold" style="font-size: clamp(1rem, 3vw, 1.25rem);">Debit Card</h5>
+                          <small class="text-white opacity-75 d-none d-sm-block">Secure Payment Gateway</small>
                         </div>
                       </div>
                     </div>
                     <div class="card-body p-3 p-md-4">
                       <div class="mb-3 mb-md-4">
-                        <p class="text-muted mb-0 text-end" style="font-size: clamp(0.9rem, 2.5vw, 1.05rem);">
-                          <i class="ti-info-alt me-2"></i><span data-i18n="payment.fillCardDetails">Fill in the card details</span>
+                        <p class="text-muted mb-0 text-end" style="direction: rtl; font-size: clamp(0.9rem, 2.5vw, 1.05rem);">
+                          <i class="ti-info-alt me-2"></i>Fill in the card details
                         </p>
                       </div>
                       
@@ -287,7 +287,7 @@
                       <div class="mb-3 mb-md-4">
                         <label for="cardNumber" class="form-label fw-semibold text-dark mb-2 d-flex align-items-center">
                           <i class="ti-credit-card me-2 text-muted"></i>
-                          <span style="font-size: clamp(0.85rem, 2vw, 0.95rem);" data-i18n="payment.cardNumber">Card Number</span>
+                          <span style="font-size: clamp(0.85rem, 2vw, 0.95rem);">Card Number</span>
                         </label>
                         <div class="input-group input-group-lg">
                           <span class="input-group-text bg-light border-end-0">
@@ -302,7 +302,7 @@
                         </div>
                         <small class="text-muted mt-2 d-block">
                           <i class="ti-shield me-1 text-success"></i>
-                          <span style="font-size: clamp(0.75rem, 2vw, 0.85rem);" data-i18n="payment.cardInfoSecure">Your card information is secure and encrypted</span>
+                          <span style="font-size: clamp(0.75rem, 2vw, 0.85rem);">Your card information is secure and encrypted</span>
                         </small>
                       </div>
                       
@@ -311,7 +311,7 @@
                         <div class="col-6 col-sm-6">
                           <label for="cardExpiry" class="form-label fw-semibold text-dark mb-2 d-flex align-items-center">
                             <i class="ti-calendar me-2 text-muted"></i>
-                            <span style="font-size: clamp(0.85rem, 2vw, 0.95rem);" data-i18n="payment.expiryDate">Expiry Date</span>
+                            <span style="font-size: clamp(0.85rem, 2vw, 0.95rem);">Expiry Date</span>
                           </label>
                           <div class="input-group">
                             <span class="input-group-text bg-light">
@@ -325,7 +325,7 @@
                         <div class="col-6 col-sm-6">
                           <label for="cardCVV" class="form-label fw-semibold text-dark mb-2 d-flex align-items-center">
                             <i class="ti-lock me-2 text-muted"></i>
-                            <span style="font-size: clamp(0.85rem, 2vw, 0.95rem);" data-i18n="payment.cvv">CVV</span>
+                            <span style="font-size: clamp(0.85rem, 2vw, 0.95rem);">CVV</span>
                           </label>
                           <div class="input-group">
                             <span class="input-group-text bg-light">
@@ -346,7 +346,7 @@
                   <div class="card border-0 shadow-lg h-100" style="border-radius: 16px;">
                     <div class="card-header bg-white border-0 py-3 py-md-4">
                       <h5 class="mb-0 fw-bold text-dark text-center" style="font-size: clamp(1rem, 3vw, 1.25rem);">
-                        <i class="ti-wallet me-2"></i><span data-i18n="payment.paymentMethods">Payment Methods</span>
+                        <i class="ti-wallet me-2"></i>Payment Methods
                       </h5>
                     </div>
                     <div class="card-body p-3 p-md-4">
@@ -363,8 +363,8 @@
                                 <div class="rounded-circle position-absolute" style="width: clamp(24px, 6vw, 32px); height: clamp(24px, 6vw, 32px); background: #F79E1B; right: 0; z-index: 1;"></div>
                               </div>
                               <div>
-                                <div class="fw-semibold" style="font-size: clamp(0.95rem, 2.5vw, 1.1rem);" data-i18n="payment.debitCard">Debit Card</div>
-                                <small class="opacity-75 d-none d-sm-block" data-i18n="payment.recommended">Recommended</small>
+                                <div class="fw-semibold" style="font-size: clamp(0.95rem, 2.5vw, 1.1rem); direction: rtl;">Debit Card</div>
+                                <small class="opacity-75 d-none d-sm-block">Recommended</small>
                               </div>
                             </div>
                             <div class="d-flex align-items-center gap-2 ms-auto">
@@ -381,7 +381,7 @@
                                 onmouseover="this.style.borderColor='#1e88e5'; this.style.boxShadow='0 4px 12px rgba(30, 136, 229, 0.15)';"
                                 onmouseout="this.style.borderColor='#e0e0e0'; this.style.boxShadow='none';">
                           <div class="d-flex align-items-center justify-content-between flex-wrap">
-                            <span class="fw-semibold mb-2 mb-md-0" style="font-size: clamp(0.95rem, 2.5vw, 1.1rem);" data-i18n="payment.creditCardVisa">Credit Card / Visa</span>
+                            <span class="fw-semibold mb-2 mb-md-0" style="font-size: clamp(0.95rem, 2.5vw, 1.1rem);">Credit Card / Visa</span>
                             <div class="d-flex align-items-center gap-2 ms-auto">
                               <div class="bg-primary rounded px-2 py-1 flex-shrink-0">
                                 <span class="text-white fw-bold" style="font-size: clamp(0.65rem, 1.5vw, 0.75rem);">VISA</span>
@@ -402,8 +402,8 @@
                                 onmouseout="this.style.borderColor='#e0e0e0'; this.style.boxShadow='none';">
                           <div class="d-flex align-items-center justify-content-between flex-wrap">
                             <div class="mb-2 mb-md-0">
-                              <div class="fw-semibold" style="font-size: clamp(0.95rem, 2.5vw, 1.1rem);" data-i18n="payment.bankTransfer">Bank Transfer</div>
-                              <small class="text-muted d-none d-sm-block" data-i18n="payment.directBankTransfer">Direct bank transfer</small>
+                              <div class="fw-semibold" style="font-size: clamp(0.95rem, 2.5vw, 1.1rem);">Bank Transfer</div>
+                              <small class="text-muted d-none d-sm-block">Direct bank transfer</small>
                             </div>
                             <i class="ti-exchange-vertical ms-auto" style="font-size: clamp(1.2rem, 3vw, 1.5rem); color: #666;"></i>
                           </div>
@@ -414,7 +414,7 @@
                       <div class="mt-3 mt-md-4 pt-3 border-top text-center">
                         <small class="text-muted d-flex align-items-center justify-content-center gap-2 flex-wrap">
                           <i class="ti-shield text-success"></i>
-                          <span style="font-size: clamp(0.75rem, 2vw, 0.85rem);" data-i18n="payment.sslEncryption">256-bit SSL Encryption</span>
+                          <span style="font-size: clamp(0.75rem, 2vw, 0.85rem);">256-bit SSL Encryption</span>
                           <i class="ti-lock text-success"></i>
                         </small>
                       </div>
@@ -432,10 +432,10 @@
                             style="background: linear-gradient(135deg, #32CD32 0%, #228B22 100%); color: white; border-radius: 12px; font-size: clamp(1rem, 3vw, 1.2rem); min-width: 200px; max-width: 400px; transition: all 0.3s ease;"
                             onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(50, 205, 50, 0.4)';"
                             onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(50, 205, 50, 0.3)';">
-                      <i class="ti-check-box me-2"></i><span data-i18n="payment.payNow">Pay Now</span>
+                      <i class="ti-check-box me-2"></i>Pay Now
                     </button>
                     <p class="text-muted mt-3 mb-0 px-2" style="font-size: clamp(0.8rem, 2vw, 0.9rem);">
-                      <i class="ti-info-alt me-1"></i><span data-i18n="payment.agreeTerms">By clicking "Pay Now", you agree to our terms and conditions</span>
+                      <i class="ti-info-alt me-1"></i>By clicking "Pay Now", you agree to our terms and conditions
                     </p>
                   </div>
                 </div>
@@ -447,7 +447,7 @@
           <!-- partial:partials/_footer.html -->
           <footer class="footer">
   <div class="text-center">
-    <span class="text-muted text-center text-primary" data-i18n="footer.copyright">Copyright © 2025 OpticoreAI.com</span>
+    <span class="text-muted text-center text-primary">Copyright © 2025 OpticoreAI.com</span>
     
   </div>
 </footer>

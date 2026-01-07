@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Register Member - Jameya Admin</title>
+    <title>Jameya Admin</title>
     <link rel="stylesheet" href="../../assets/vendors/feather/feather.css">
     <link rel="stylesheet" href="../../assets/vendors/ti-icons/css/themify-icons.css">
     <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
@@ -175,17 +175,80 @@
 
         <!-- partial -->
         <div class="main-panel">
-          <div class="content-wrapper">
+          <div class="content-wrapper" style="background: #eceff8;">
+            <div class="bg-white p-4 rounded-1 mb-4">
+              <div class="row mb-4">
+                <div class="col-12">
+                  <h3 class="mb-0 font-weight-bold" id="pageTitle">Register New Member</h3>
+                  <p class="text-muted">Fill in the member information below</p>
+                </div>
+              </div>
+              <hr>
+
+              <form id="memberForm">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="memberName">Full Name <span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="memberName" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="phoneNumber">Phone Number <span class="text-danger">*</span></label>
+                      <input type="tel" class="form-control" id="phoneNumber" required>
+                      <small class="form-text text-muted">Format: +968XXXXXXXX</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="nationalId">National ID</label>
+                      <input type="text" class="form-control" id="nationalId">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="email">Email Address</label>
+                      <input type="email" class="form-control" id="email">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="status">Status <span class="text-danger">*</span></label>
+                      <select class="form-control" id="status" required>
+                        <option value="active">Active</option>
+                        <option value="withdrawn">Withdrawn</option>
+                        <option value="completed">Completed</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mt-4">
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-primary btn-sm">
+                      <i class="ti-save"></i> Save Member
+                    </button>
+                    <a href="member-list.html" class="btn btn-secondary btn-sm">
+                      <i class="ti-close"></i> Cancel
+                    </a>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
-          <!-- content-wrapper ends -->
-          <!-- partial:../../partials/_footer.html -->
+
           <footer class="footer">
             <div class="text-center">
-              <span class="text-muted text-center text-primary" data-i18n="footer.copyright">Copyright © 2025 OpticoreAI.com</span>
-              
+              <span class="text-muted text-center text-primary">Copyright © 2025 OpticoreAI.com</span>
             </div>
           </footer>
-          <!-- partial -->
         </div>
       </div>
     </div>
@@ -200,89 +263,7 @@
     <script src="../../assets/js/app.js"></script>
     <script src="../../assets/js/jquery.cookie.js" type="text/javascript"></script>
     <script src="../../assets/js/i18n.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // Check authentication
-        if (!AuthManager.requireAuth()) return;
-
-        const memberId = Helpers.getUrlParameter('id');
-        let isEditMode = false;
-
-        // Load member data if editing
-        if (memberId) {
-          isEditMode = true;
-          document.getElementById('pageTitle').textContent = 'Edit Member';
-          loadMemberData(memberId);
-        }
-
-        // Form submission
-        document.getElementById('memberForm').addEventListener('submit', function(e) {
-          e.preventDefault();
-          saveMember();
-        });
-
-        function loadMemberData(id) {
-          try {
-            const member = MembersManager.getById(id);
-            if (!member) {
-              Helpers.showError('Member not found');
-              window.location.href = 'member-list.html';
-              return;
-            }
-
-            document.getElementById('memberName').value = member.name;
-            document.getElementById('phoneNumber').value = member.phoneNumber;
-            document.getElementById('nationalId').value = member.nationalId || '';
-            document.getElementById('email').value = member.email || '';
-            document.getElementById('status').value = member.status;
-          } catch (error) {
-            Helpers.showError('Error loading member: ' + error.message);
-          }
-        }
-
-        function saveMember() {
-          const formData = {
-            name: document.getElementById('memberName').value.trim(),
-            phoneNumber: document.getElementById('phoneNumber').value.trim(),
-            nationalId: document.getElementById('nationalId').value.trim() || null,
-            email: document.getElementById('email').value.trim() || null,
-            status: document.getElementById('status').value
-          };
-
-          // Validation
-          if (!formData.name) {
-            Helpers.showError('Name is required');
-            return;
-          }
-
-          if (!Helpers.validatePhone(formData.phoneNumber)) {
-            Helpers.showError('Please enter a valid phone number');
-            return;
-          }
-
-          if (formData.email && !Helpers.validateEmail(formData.email)) {
-            Helpers.showError('Please enter a valid email address');
-            return;
-          }
-
-          try {
-            if (isEditMode) {
-              MembersManager.update(memberId, formData);
-              Helpers.showSuccess('Member updated successfully');
-            } else {
-              MembersManager.create(formData);
-              Helpers.showSuccess('Member registered successfully');
-            }
-            
-            setTimeout(() => {
-              window.location.href = 'member-list.html';
-            }, 1000);
-          } catch (error) {
-            Helpers.showError(error.message);
-          }
-        }
-      });
-    </script>
+   
   </body>
 </html>
 

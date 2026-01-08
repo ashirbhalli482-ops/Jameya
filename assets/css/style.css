@@ -26379,3 +26379,128 @@ table.dataTable tbody td.select-checkbox:after {
   }
 }
 /*# sourceMappingURL=maps/style.css.map */
+
+
+
+
+/* ============================================
+   Enhanced Banner Images Styling
+   ============================================ */
+   .banner-image-wrapper {
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    -moz-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    -ms-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .banner-image-wrapper:hover {
+    transform: translateY(-8px) scale(1.02);
+    -webkit-transform: translateY(-8px) scale(1.02);
+    -moz-transform: translateY(-8px) scale(1.02);
+    -ms-transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15),
+                0 10px 20px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.3) !important;
+  }
+  
+  .banner-image {
+    width: 100%;
+    height: 220px;
+    display: block;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    -moz-transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    -ms-transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    object-fit: cover;
+    filter: brightness(1) contrast(1) saturate(1);
+    -webkit-filter: brightness(1) contrast(1) saturate(1);
+  }
+  
+  .banner-image-wrapper:hover .banner-image {
+    transform: scale(1.08);
+    -webkit-transform: scale(1.08);
+    -moz-transform: scale(1.08);
+    -ms-transform: scale(1.08);
+    filter: brightness(1.1) contrast(1.05) saturate(1.1);
+    -webkit-filter: brightness(1.1) contrast(1.05) saturate(1.1);
+  }
+  
+  .banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(30, 136, 229, 0) 0%,
+      rgba(30, 136, 229, 0.05) 50%,
+      rgba(30, 136, 229, 0) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    -moz-transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    -ms-transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    border-radius: inherit;
+  }
+  
+  .banner-image-wrapper:hover .banner-overlay {
+    opacity: 1;
+  }
+  
+  /* Responsive adjustments for banner images */
+  @media (max-width: 1024px) {
+    .banner-image {
+      height: 145px;
+    }
+  }
+  
+  /* Responsive adjustments for banner images */
+  @media (max-width: 768px) {
+    .banner-image {
+      height: 140px;
+    }
+    .banner-image-wrapper {
+      margin-bottom: 1rem;
+    }
+    
+    .banner-image-wrapper:hover {
+      transform: translateY(-4px) scale(1.01);
+      -webkit-transform: translateY(-4px) scale(1.01);
+      -moz-transform: translateY(-4px) scale(1.01);
+      -ms-transform: translateY(-4px) scale(1.01);
+    }
+  }
+  /* Responsive adjustments for banner images */
+  @media (max-width: 425px) {
+    .banner-image {
+      height: 115px;
+    }
+  }
+  /* Enhanced profile image styling */
+  .navbar .navbar-nav .nav-item.nav-profile img {
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
+  }
+  
+  .navbar .navbar-nav .nav-item.nav-profile:hover img {
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+  }
+  
+  /*# sourceMappingURL=maps/style.css.map */

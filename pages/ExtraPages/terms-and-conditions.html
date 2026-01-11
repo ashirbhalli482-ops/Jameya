@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en" class="notranslate">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google" content="notranslate">
+    <meta name="google-translate-customization" content="no">
+    <title>Jameya Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="../../assets/vendors/feather/feather.css">
+    <link rel="stylesheet" href="../../assets/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../../assets/vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <!-- endinject -->
+    <!-- i18n CSS -->
+    <link rel="stylesheet" href="../../assets/css/i18n.css">
+    <!-- <link rel="shortcut icon" href="../../assets/images/favicon.png" /> -->
+    <link rel="icon" href="data:,">
+    <style>
+      /* Terms and Conditions Page - Ensure all text aligns right for Arabic */
+      .rtl-content ul,
+      .rtl-content ol,
+      .rtl-content li,
+      .rtl-content .list-unstyled,
+      .rtl-content .list-unstyled li {
+        direction: rtl !important;
+        text-align: right !important;
+      }
+
+      /* Adjust list item margins for RTL */
+      .rtl-content .list-unstyled.ms-3,
+      .rtl-content ul.ms-3,
+      .rtl-content ol.ms-3 {
+        margin-right: 1rem !important;
+        margin-left: 0 !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+      }
+
+      /* Ensure all headings align right */
+      .rtl-content h1,
+      .rtl-content h2,
+      .rtl-content h3,
+      .rtl-content h4,
+      .rtl-content h5,
+      .rtl-content h6,
+      .rtl-content .h1,
+      .rtl-content .h2,
+      .rtl-content .h3,
+      .rtl-content .h4,
+      .rtl-content .h5,
+      .rtl-content .h6 {
+        direction: rtl !important;
+        text-align: right !important;
+      }
+
+      /* Ensure all paragraphs and text content align right */
+      .rtl-content p,
+      .rtl-content .text-muted,
+      .rtl-content .text-dark,
+      .rtl-content .text-primary,
+      .rtl-content span:not(.navbar *):not(.sidebar *):not(.footer *):not(.footer) {
+        direction: rtl !important;
+        text-align: right !important;
+      }
+
+      /* Ensure list item icons are positioned correctly for RTL */
+      .rtl-content li i.ti-angle-right {
+        margin-right: 0.5rem !important;
+        margin-left: 0 !important;
+        transform: scaleX(-1); /* Flip the arrow icon for RTL */
+      }
+
+      /* Ensure all divs in content area align right (except navbar/sidebar) */
+      .rtl-content .bg-white,
+      .rtl-content .rounded-3,
+      .rtl-content .shadow-sm,
+      .rtl-content .row,
+      .rtl-content .col-12,
+      .rtl-content .col-md-12,
+      .rtl-content .mb-4,
+      .rtl-content .mb-5,
+      .rtl-content .mb-3,
+      .rtl-content .mb-2,
+      .rtl-content .mb-0,
+      .rtl-content .mt-3,
+      .rtl-content .p-4,
+      .rtl-content .p-md-5 {
+        direction: rtl !important;
+        text-align: right !important;
+      }
+
+      /* Ensure hr elements work correctly in RTL */
+      .rtl-content hr {
+        direction: rtl !important;
+      }
+
+      /* Override any Bootstrap text alignment utilities that might interfere */
+      .rtl-content .text-start {
+        text-align: right !important;
+      }
+
+      .rtl-content .text-left {
+        text-align: right !important;
+      }
+
+      /* Footer should always be centered regardless of language */
+      .footer,
+      .footer *,
+      .rtl-content .footer,
+      .rtl-content .footer *,
+      body.rtl-body .footer,
+      body.rtl-body .footer * {
+        direction: ltr !important;
+        text-align: center !important;
+      }
+
+      /* Ensure all content wrapper children align right (except footer) */
+      .rtl-content .content-wrapper > *:not(.footer) {
+        direction: rtl !important;
+        text-align: right !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-lg-center justify-content-start">
+          <a class="navbar-brand brand-logo" href="../../index.html">
+            <img src="../../assets/images/logo.png" alt="logo" />
+            <!-- Jameya -->
+          </a>
+          <a class="navbar-brand brand-logo-mini ps-0 me-5 href="../../index.html">
+            <img src="../../assets/images/logo.png" alt="logo" /> 
+            <!-- Jameya -->
+          </a>
+        </div>
+  <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+    <button class="navbar-toggler navbar-toggler align-self-center text-white" type="button" data-toggle="minimize">
+      <span class="icon-menu"></span>
+    </button>
+    
+    <ul class="navbar-nav navbar-nav-right">
+      <li class="nav-item dropdown">
+        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
+          <i class="icon-bell mx-0"></i>
+          <span class="count"></span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+          <p class="mb-0 font-weight-normal float-left dropdown-header" data-i18n="navbar.notifications">Notifications</p>
+          <a class="dropdown-item preview-item">
+            <div class="preview-thumbnail">
+              <div class="preview-icon bg-success">
+                <i class="ti-info-alt mx-0"></i>
+              </div>
+            </div>
+            <div class="preview-item-content">
+              <h6 class="preview-subject font-weight-normal" data-i18n="navbar.applicationError">Application Error</h6>
+              <p class="font-weight-light small-text mb-0 text-muted" data-i18n="navbar.justNow"> Just now </p>
+            </div>
+          </a>
+          <a class="dropdown-item preview-item">
+            <div class="preview-thumbnail">
+              <div class="preview-icon bg-warning">
+                <i class="ti-settings mx-0"></i>
+              </div>
+            </div>
+            <div class="preview-item-content">
+              <h6 class="preview-subject font-weight-normal" data-i18n="navbar.settings">Settings</h6>
+              <p class="font-weight-light small-text mb-0 text-muted" data-i18n="navbar.privateMessage"> Private message </p>
+            </div>
+          </a>
+          <a class="dropdown-item preview-item">
+            <div class="preview-thumbnail">
+              <div class="preview-icon bg-info">
+                <i class="ti-user mx-0"></i>
+              </div>
+            </div>
+            <div class="preview-item-content">
+              <h6 class="preview-subject font-weight-normal" data-i18n="navbar.newUserRegistration">New user registration</h6>
+              <p class="font-weight-light small-text mb-0 text-muted"> 2 <span data-i18n="navbar.daysAgo">days ago</span> </p>
+            </div>
+          </a>
+        </div>
+      </li>
+      <li class="nav-item nav-profile dropdown">
+        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
+          <img src="../../assets/images/profile.webp" alt="profile" />
+        </a>
+        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+          <a class="dropdown-item">
+            <i class="ti-settings text-primary"></i> <span data-i18n="navbar.settings">Settings</span> </a>
+          <a class="dropdown-item">
+            <i class="ti-power-off text-primary"></i> <span data-i18n="navbar.logout">Logout</span> </a>
+        </div>
+      </li>
+      <!-- <li class="nav-item nav-settings d-none d-lg-flex">
+        <a class="nav-link" href="#">
+          <i class="icon-ellipsis"></i>
+        </a>
+      </li> -->
+    </ul>
+    <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center text-white" type="button" data-toggle="offcanvas">
+      <span class="icon-menu"></span>
+    </button>
+  </div>
+</nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+         <!-- partial:partials/_sidebar.html -->
+         <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../index.html">
+                  <i class="icon-grid menu-icon"></i>
+                  <span class="menu-title" data-i18n="sidebar.dashboard">Dashboard</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../pages/payments/monthly-payment.html">
+                  <i class="ti-save bi bi-wallet menu-icon"></i>
+                  <!-- <i class="bi bi-wallet"></i> -->
+                  <span class="menu-title" data-i18n="sidebar.monthlyPayment">Monthly Payment</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../pages/payments/payment-received.html">
+                  <i class="ti-receipt bi bi-wallet menu-icon"></i>
+                  <!-- <i class="bi bi-wallet"></i> -->
+                  <span class="menu-title" data-i18n="sidebar.paymentReceived">Payment Received</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../pages/members/member-register.html">
+                  <i class="ti-calendar bi bi-wallet menu-icon"></i>
+                  
+                  <span class="menu-title" data-i18n="sidebar.memberRegister">Member Register</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../pages/members/member-list.html">
+                  <i class="ti-calendar bi bi-wallet menu-icon"></i>
+                  
+                  <span class="menu-title" data-i18n="sidebar.membersList">Members List</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../pages/members/members-schedule.html">
+                  <i class="ti-calendar bi bi-wallet menu-icon"></i>
+                  <!-- <i class="bi bi-wallet"></i> -->
+                  <span class="menu-title" data-i18n="sidebar.membersSchedule">Members Schedule</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../pages/ExtraPages/terms-and-conditions.html">
+                  <i class="ti-file bi bi-wallet menu-icon"></i>
+                  
+                  <span class="menu-title" data-i18n="sidebar.termsAndConditions">Terms & Conditions</span>
+                </a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="../../pages/ExtraPages/admissionfeecalculator.html">
+                  <i class="ti-file bi bi-wallet menu-icon"></i>
+                  
+                  <span class="menu-title" data-i18n="sidebar.FeeCalculator">Fee Calculator</span>
+                </a>
+              </li> -->
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="../../pages/ExtraPages/contactus.html">
+                  <i class="ti-email bi bi-wallet menu-icon"></i>
+                  
+                  <span class="menu-title" data-i18n="sidebar.contactUs">Contact Us</span>
+                </a>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#language" aria-expanded="false" aria-controls="language">
+                  <i class="icon-head menu-icon"></i>
+                  <span class="menu-title" data-i18n="sidebar.language">Language</span>
+                  <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="language">
+                  <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="#" data-lang="ar"> <span data-i18n="sidebar.arabic">Arabic</span> </a></li>
+                    <li class="nav-item"> <a class="nav-link" href="#" data-lang="en"> <span data-i18n="sidebar.english">English</span> </a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+                  <i class="icon-head menu-icon"></i>
+                  <span class="menu-title" data-i18n="sidebar.userPages">User Pages</span>
+                  <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="auth">
+                  <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login.html"> <span data-i18n="sidebar.login">Login</span> </a></li>
+                    <li class="nav-item"> <a class="nav-link" href="../../pages/samples/signup.html"> <span data-i18n="sidebar.signUp">Sign Up</span> </a></li>
+                  </ul>
+                </div>
+              </li>
+              
+            </ul>
+          </nav>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper" style="background: #eceff8;">
+            <!-- Terms and Conditions Content -->
+            <div class="bg-white p-4 p-md-5 rounded-3 shadow-sm">
+              <div class="row mb-4">
+                <div class="col-12">
+                  <h1 class="mb-2 fw-bold text-dark">Terms of Service</h1>
+                  <p class="text-muted mb-0">Last updated: 10 December 2025</p>
+                </div>
+              </div>
+              <hr class="border-top border-2 opacity-25 mb-4">
+
+              <!-- Eligibility Section -->
+              <div class="mb-5">
+                <h2 class="h4 fw-bold text-dark mb-3">Eligibility</h2>
+                <ul class="list-unstyled ms-3">
+                  <li class="mb-2"><i class="ti-angle-right text-primary me-2"></i><span>Be an Omani national, residing in Oman</span></li>
+                  <li class="mb-2"><i class="ti-angle-right text-primary me-2"></i><span>Be at least 18 years old</span></li>
+                  <li class="mb-2"><i class="ti-angle-right text-primary me-2"></i><span>Have a clear source of income</span></li>
+                  <li class="mb-2"><i class="ti-angle-right text-primary me-2"></i><span>Have an Omani bank account under your name</span></li>
+                  <li class="mb-2"><i class="ti-angle-right text-primary me-2"></i><span>Fill out Know Your Customer forms</span></li>
+                  <li class="mb-2"><i class="ti-angle-right text-primary me-2"></i><span>Authorize Daira to access your credit report and personal details through the Oman Credit and Financial Information Centre</span></li>
+                </ul>
+              </div>
+
+              <!-- Circle Application Confirmation Section -->
+              <div class="mb-5">
+                <h2 class="h4 fw-bold text-dark mb-3">Circle Application Confirmation</h2>
+                <p class="text-muted">Your application to join a money circle will only be processed after agreeing to the terms and conditions, privacy policy and successful payment of the admission fee.</p>
+              </div>
+
+              <!-- Approval of Circle Membership Applications Section -->
+              <div class="mb-5">
+                <h2 class="h4 fw-bold text-dark mb-3">Approval of Circle Membership Applications</h2>
+                <p class="text-muted">Applications to join circles undergo a comprehensive evaluation process conducted by Daira, which combines the data users have personally provided and the data they have authorized Daira to retrieve from other approved sources. Daira reserves the right to reject any membership request based on the result of the assessment. If Daira determines that a membership cannot be approved for any reason, a full refund of the admission fee paid by the user will be issued.</p>
+              </div>
+
+              <!-- Monthly Contribution Collection Section -->
+              <div class="mb-5">
+                <h2 class="h4 fw-bold text-dark mb-3">Monthly Contribution Collection</h2>
+                <p class="text-muted">Daira collects member contributions via recurring payments, offering a convenient and secure transaction method. Upon joining a money circle, members are required to authorize Daira to pull their monthly contributions from their bank account. Payments must originate from an account in the member's name, and payments from third-party accounts are not accepted. The registered card used to join Daira has to be valid for at least the first 3 months of the circle duration.</p>
+              </div>
+
+              <!-- Late Payment Policy and Fees Associated Section -->
+              <div class="mb-5">
+                <h2 class="h4 fw-bold text-dark mb-3">Late Payment Policy and Fees Associated</h2>
+                <p class="text-muted">The member commits to donating 1% as a fixed rate of the overdue installment for each day of delay if they fail to make payments on time. It is important to note that these donated amounts will not go to Daira, but will be directed towards charitable purposes under the supervision of the Sharia committee. Therefore, the client acknowledges that they have agreed to commit to donating the overdue amounts in case of delayed payment
+              </div>
+
+              <!-- Receiving Payout Section -->
+              <div class="mb-5">
+                <h2 class="h4 fw-bold text-dark mb-3">Receiving Payout</h2>
+                <p class="text-muted">Daira will send the payout amount on the agreed time to the member's bank account, provided the member has no pending payments.</p>
+              </div>
+
+              <!-- Non Payment after Receiving Payout Section -->
+              <div class="mb-5">
+                <h2 class="h4 fw-bold text-dark mb-3">Non Payment after Receiving Payout</h2>
+                <p class="text-muted">Daira reserves the right to pursue legal action for recovery and report members to the concerned authorities if they fail to pay their monthly contribution for more than 10 days without prior approval from Daira. Members agree to bear all costs associated and may be banned from using Daira services in the future.</p>
+              </div>
+
+              <!-- Financial Rewards and Referral Program Section -->
+              <div class="mb-5">
+                <h2 class="h4 fw-bold text-dark mb-3">Financial Rewards and Referral Program</h2>
+                <p class="text-muted mb-3">From time to time, Daira may assign specific financial rewards to certain roles within money circles. These rewards will be clearly displayed before the user enrolls in the circle. If a user selects a role that includes a financial reward, the details of the reward will also be clearly displayed on their dashboard after joining the circle. However, Daira reserves the right to withhold the financial reward in any case it deems appropriate or necessary including, but not limited to, delays in the payment of monthly installments as per the circle's terms.</p>
+                <p class="text-muted mb-3">With respect to the referral program, the following conditions apply: The inviter must remain fully committed to timely payments and must not exceed a delay of more than two (2) days in any installment, and must have successfully paid at least one (1) installment on time in order to be eligible for the referral reward. The invitee may not use a referral code if they have already paid more than one (1) installment or if they have previously delayed any installment by more than two (2) days.</p>
+                <p class="text-muted">The referral reward becomes payable to both the inviter and the invitee only after the invitee successfully pays at least one (1) monthly installment on time within forty-five (45) days from the date of entering the referral code. Once this condition is fulfilled, the reward shall be applied to the subsequent installment that does not already have another reward or discount applied to it.</p>
+              </div>
+
+              <!-- Termination Section -->
+              <div class="mb-5">
+                <h2 class="h4 fw-bold text-dark mb-3">Termination</h2>
+                <p class="text-muted">Daira may terminate or suspend a member's account at any time for a violation of these Terms or for any other reason. Members may deactivate their account by contacting Daira's support team.</p>
+              </div>
+
+              <!-- Member Exclusion Section -->
+              <div class="mb-5">
+                <h2 class="h4 fw-bold text-dark mb-3">Member Exclusion</h2>
+                <p class="text-muted mb-3">Daira reserves the right to exclude any member from participating in a money circle under any of the following circumstances:</p>
+                <ul class="list-unstyled ms-3">
+                  <li class="mb-2"><i class="ti-angle-right text-primary me-2"></i><span>Repeated delays or failure to make installment payments on time.</span></li>
+                  <li class="mb-2"><i class="ti-angle-right text-primary me-2"></i><span>Submitting falsified or misleading personal or financial information, or using the platform for unlawful purposes — including but not limited to fraud, deception, or money laundering. This also includes any violation of, or attempt to manipulate, Daira's terms, conditions, or platform rules.</span></li>
+                  <li class="mb-2"><i class="ti-angle-right text-primary me-2"></i><span>Following a fair internal review, Daira's management may exclude any member whose continued participation is deemed harmful to the interests of the money circle or the integrity of the platform.</span></li>
+                </ul>
+                <p class="text-muted mt-3">If a member is excluded for any of the above reasons, any fees paid to the platform will be non-refundable.</p>
+              </div>
+
+              <!-- Prohibited Activities Section -->
+              <div class="mb-5">
+                <h2 class="h4 fw-bold text-dark mb-3" >Prohibited Activities</h2>
+                <p class="text-muted">Members must not engage in any activities that are illegal, fraudulent, or violate the rights of others while using Daira's platform and services. Prohibited activities include, but are not limited to, money laundering, terrorism financing, unauthorized access to Daira's systems, and any activity that could harm Daira's reputation. Members are encouraged to report any unauthorized transaction, security concern, and beliefs of breaches to this agreement immediately through the available support channels.</p>
+              </div>
+
+              <!-- Amendments Section -->
+              <div class="mb-5">
+                <h2 class="h4 fw-bold text-dark mb-3">Amendments</h2>
+                <p class="text-muted">Daira reserves the right to modify or update these Terms at any time without prior notice. Members are responsible for regularly reviewing the Terms for any changes.</p>
+              </div>
+            </div>
+             <!-- Banner Images Section -->
+             <div class="row g-4 mt-2">
+              <div class="col-12 col-md-6">
+                <div class="banner-image-wrapper position-relative overflow-hidden rounded-4 shadow-lg">
+                  <img src="../../assets/images/bannerone.jpeg" alt="Jameya Banner One" class="img-fluid banner-image">
+                  <div class="banner-overlay"></div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="banner-image-wrapper position-relative overflow-hidden rounded-4 shadow-lg">
+                  <img src="../../assets/images/bannertwo.jpeg" alt="Jameya Banner Two" class="img-fluid banner-image">
+                  <div class="banner-overlay"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:../../partials/_footer.html -->
+          <footer class="footer">
+            <div class="text-center">
+              <span class="text-muted text-center text-primary">Copyright © 2025 OpticoreAI.com</span>
+              
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="../../assets/js/off-canvas.js"></script>
+    <script src="../../assets/js/template.js"></script>
+    <script src="../../assets/js/settings.js"></script>
+    <script src="../../assets/js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="../../assets/js/jquery.cookie.js" type="text/javascript"></script>
+    <script src="../../assets/js/i18n.js"></script>
+    <!-- End custom js for this page-->
+  </body>
+</html>

@@ -33,7 +33,7 @@
             <img src="../../assets/images/logo.png" alt="logo" />
             <!-- Jameya -->
           </a>
-          <a class="navbar-brand brand-logo-mini ps-0 me-5 href="../../index.html">
+          <a class="navbar-brand brand-logo-mini ps-0 me-5" href="../../index.html">
             <img src="../../assets/images/logo.png" alt="logo" /> 
             <!-- Jameya -->
           </a>
@@ -110,8 +110,8 @@
 </nav>
       <!-- partial -->
       <div class="container-fluid page-body-wrapper">
-          <!-- partial:partials/_sidebar.html -->
-          <nav class="sidebar sidebar-offcanvas" id="sidebar">
+         <!-- partial:partials/_sidebar.html -->
+         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <ul class="nav">
               <li class="nav-item">
                 <a class="nav-link" href="../../index.html">
@@ -175,20 +175,6 @@
                   <span class="menu-title" data-i18n="sidebar.contactUs">Contact Us</span>
                 </a>
               </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="../../pages/ExtraPages/admissionfeecalculator.html">
-                  <i class="ti-file bi bi-wallet menu-icon"></i>
-                  
-                  <span class="menu-title" data-i18n="sidebar.FeeCalculator">Fee Calculator</span>
-                </a>
-              </li> -->
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="../../pages/ExtraPages/contactus.html">
-                  <i class="ti-email bi bi-wallet menu-icon"></i>
-                  
-                  <span class="menu-title" data-i18n="sidebar.contactUs">Contact Us</span>
-                </a>
-              </li> -->
               <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#language" aria-expanded="false" aria-controls="language">
                   <i class="icon-head menu-icon"></i>
@@ -221,152 +207,69 @@
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper" style="background: #eceff8;">
-            <!-- Contact Us Page Content -->
-            <div class="row g-4">
-              <!-- Contact Form Section -->
-              <div class="col-12">
-                <div class="bg-white p-4 p-md-5 rounded-3 shadow-sm">
-                  <div class="row mb-4">
-                    <div class="col-12">
-                      <h1 class="mb-2 fw-bold text-dark">Contact Us</h1>
-                      <p class="text-muted mb-0">Get in touch with us. We'd love to hear from you.</p>
-                    </div>
-                  </div>
-                  <hr class="border-top border-2 opacity-25 mb-4">
-
-                  <!-- Contact Form -->
-                  <form id="contactForm">
-                    <div class="row">
-                      <div class="col-md-6 mb-3">
-                        <div class="form-group">
-                          <label for="name" class="form-label fw-semibold">Full Name</label>
-                          <input type="text" class="form-control" id="name" name="name" data-i18n-placeholder="contact.form.namePlaceholder" placeholder="Enter your full name" required>
-                        </div>
-                      </div>
-                      <div class="col-md-6 mb-3">
-                        <div class="form-group">
-                          <label for="email" class="form-label fw-semibold">Email Address</label>
-                          <input type="email" class="form-control" id="email" name="email" data-i18n-placeholder="contact.form.emailPlaceholder" placeholder="Enter your email address" required>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6 mb-3">
-                        <div class="form-group">
-                          <label for="phone" class="form-label fw-semibold">Phone Number</label>
-                          <input type="tel" class="form-control" id="phone" name="phone" data-i18n-placeholder="contact.form.phonePlaceholder" placeholder="Enter your phone number">
-                        </div>
-                      </div>
-                      <div class="col-md-6 mb-3">
-                        <div class="form-group">
-                          <label for="subject" class="form-label fw-semibold">Subject</label>
-                          <input type="text" class="form-control" id="subject" name="subject" data-i18n-placeholder="contact.form.subjectPlaceholder" placeholder="Enter subject" required>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-12 mb-3">
-                        <div class="form-group">
-                          <label for="message" class="form-label fw-semibold">Message</label>
-                          <textarea class="form-control" id="message" name="message" rows="6" data-i18n-placeholder="contact.form.messagePlaceholder" placeholder="Enter your message" required></textarea>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-12">
-                        <button type="submit" class="btn btn-primary btn-lg px-5">Send Message</button>
-                      </div>
-                    </div>
-                  </form>
+            <!-- Admission Fee Calculator Content -->
+            <div class="bg-white p-3 p-md-4 p-lg-5 rounded-3 shadow-sm calculator-container">
+              <!-- Monthly Contribution Section -->
+              <div class="calculator-section">
+                <label class="calculator-label">Monthly Contribution (OMR)</label>
+                <div class="calculator-value" id="contributionValue">20 OMR</div>
+                <div class="slider-container">
+                  <span class="slider-min-value">5</span>
+                  <input 
+                    type="range" 
+                    class="calculator-slider" 
+                    id="contributionSlider" 
+                    min="5" 
+                    max="100" 
+                    value="20" 
+                    step="5"
+                  >
                 </div>
               </div>
 
-              <!-- Contact Information Section -->
-              <div class="col-12">
-                <div class="bg-white p-4 p-md-5 rounded-3 shadow-sm mb-4">
-                  <h3 class="mb-4 fw-bold text-dark">Contact Information</h3>
-                  <div class="d-flex flex-column flex-lg-row gap-4">
-                  <!-- Address -->
-                  <div class="mb-4">
-                    <div class="d-flex align-items-start">
-                      <div class="icon-in-bg bg-primary text-white rounded-circle me-3">
-                        <i class="ti-location-pin fs-5"></i>
-                      </div>
-                      <div>
-                        <h6 class="fw-bold text-dark mb-1">Address</h6>
-                        <p class="text-muted mb-0">Salalah, Sultanate of Oman</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Phone -->
-                  <div class="mb-4">
-                    <div class="d-flex align-items-start">
-                      <div class="icon-in-bg bg-primary text-white rounded-circle me-3">
-                        <i class="ti-mobile fs-5"></i>
-                      </div>
-                      <div>
-                        <h6 class="fw-bold text-dark mb-1">Phone</h6>
-                        <p class="text-muted mb-0">
-                          <a href="tel:+96812345678" class="text-decoration-none text-muted">+968 9888 8892</a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Email -->
-                  <div class="mb-4">
-                    <div class="d-flex align-items-start">
-                      <div class="icon-in-bg bg-primary text-white rounded-circle me-3">
-                        <i class="ti-email fs-5"></i>
-                      </div>
-                      <div>
-                        <h6 class="fw-bold text-dark mb-1">Email</h6>
-                        <p class="text-muted mb-0">
-                          <a href="mailto:info@jameya.com" class="text-decoration-none text-muted">admin@opticorai.com</a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Business Hours -->
-                  <div class="mb-4">
-                    <div class="d-flex align-items-start">
-                      <div class="icon-in-bg bg-primary text-white rounded-circle me-3">
-                        <i class="ti-time fs-5"></i>
-                      </div>
-                      <div>
-                        <h6 class="fw-bold text-dark mb-1">Business Hours</h6>
-                        <p class="text-muted mb-0">24/7</p>
-                        
-                      </div>
-                    </div>
-                  </div>
-                  </div>
+              <!-- Duration Section -->
+              <div class="calculator-section">
+                <label class="calculator-label">Duration (months)</label>
+                <div class="calculator-value" id="durationValue">6</div>
+                <div class="slider-container">
+                  <span class="slider-min-value">6</span>
+                  <input 
+                    type="range" 
+                    class="calculator-slider" 
+                    id="durationSlider" 
+                    min="6" 
+                    max="24" 
+                    value="6" 
+                    step="1"
+                  >
                 </div>
+              </div>
 
-                <!-- Social Media Section -->
-                <!-- <div class="bg-white p-4 p-md-5 rounded-3 shadow-sm">
-                  <h3 class="mb-4 fw-bold text-dark" data-i18n="contact.social.title">Follow Us</h3>
-                  <div class="d-flex gap-3">
-                    <a href="#" class="icon-in-bg bg-primary text-white rounded-circle" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; text-decoration: none;">
-                      <i class="ti-facebook fs-5"></i>
-                    </a>
-                    <a href="#" class="icon-in-bg bg-primary text-white rounded-circle" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; text-decoration: none;">
-                      <i class="ti-twitter fs-5"></i>
-                    </a>
-                    <a href="#" class="icon-in-bg bg-primary text-white rounded-circle" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; text-decoration: none;">
-                      <i class="ti-linkedin fs-5"></i>
-                    </a>
-                    <a href="#" class="icon-in-bg bg-primary text-white rounded-circle" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; text-decoration: none;">
-                      <i class="ti-instagram fs-5"></i>
-                    </a>
-                  </div>
-                </div> -->
+              <!-- Payout Month Section -->
+              <div class="calculator-section">
+                <label class="calculator-label">Payout Month</label>
+                <div class="month-buttons-grid" id="monthButtonsGrid">
+                  <!-- Month buttons will be generated dynamically -->
+                </div>
+              </div>
+
+              <!-- Payout Display -->
+              <div class="payout-display">
+                <div class="payout-text">You will receive:</div>
+                <div class="payout-amount" id="payoutAmount">120 OMR</div>
+              </div>
+              <!-- Admission Fee Card -->
+            <div class="admission-fee-card-container">
+              <div class="admission-fee-card">
+                <h3 class="admission-fee-title">Admission Fee</h3>
+                <div class="admission-fee-value">N/A</div>
+                <p class="admission-fee-description">Paid only once before the circle starts</p>
+                <button class="admission-fee-btn">Join Now</button>
               </div>
             </div>
-             <!-- Banner Images Section -->
-             <div class="row g-4 mt-2">
+            </div>
+ <!-- Banner Images Section -->
+            <div class="row g-4 mt-2">
               <div class="col-12 col-md-6">
                 <div class="banner-image-wrapper position-relative overflow-hidden rounded-4 shadow-lg">
                   <img src="../../assets/images/bannerone.jpeg" alt="Jameya Banner One" class="img-fluid banner-image">
@@ -380,12 +283,13 @@
                 </div>
               </div>
             </div>
+            
           </div>
           <!-- content-wrapper ends -->
           <!-- partial:../../partials/_footer.html -->
           <footer class="footer">
             <div class="text-center">
-              <span class="text-muted text-center text-primary" data-i18n="footer.copyright">Copyright © 2025 OpticoreAI.com</span>
+              <span class="text-muted text-center text-primary">Copyright © 2025 OpticoreAI.com</span>
               
             </div>
           </footer>
@@ -410,43 +314,68 @@
     <!-- Custom js for this page-->
     <script src="../../assets/js/jquery.cookie.js" type="text/javascript"></script>
     <script src="../../assets/js/i18n.js"></script>
+    <!-- Admission Fee Calculator Script -->
     <script>
-      // Contact Form Submission Handler
-      document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
+      (function() {
+        const contributionSlider = document.getElementById('contributionSlider');
+        const durationSlider = document.getElementById('durationSlider');
+        const contributionValue = document.getElementById('contributionValue');
+        const durationValue = document.getElementById('durationValue');
+        const monthButtonsGrid = document.getElementById('monthButtonsGrid');
+        const payoutAmount = document.getElementById('payoutAmount');
         
-        // Get form values
-        const formData = {
-          name: document.getElementById('name').value,
-          email: document.getElementById('email').value,
-          phone: document.getElementById('phone').value,
-          subject: document.getElementById('subject').value,
-          message: document.getElementById('message').value
-        };
-        
-        // Basic validation
-        if (!formData.name || !formData.email || !formData.subject || !formData.message) {
-          const msg = window.i18n ? window.i18n.t('contact.form.fillRequired') : 'Please fill in all required fields.';
-          alert(msg);
-          return;
+        let selectedMonth = null;
+        let currentContribution = 20;
+        let currentDuration = 6;
+
+        // Initialize month buttons
+        function generateMonthButtons(duration) {
+          monthButtonsGrid.innerHTML = '';
+          const monthText = 'Month';
+          for (let i = 1; i <= duration; i++) {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'month-button';
+            button.dataset.month = i;
+            button.innerHTML = `
+              <span class="month-number">${i}</span>
+              <span>${monthText} ${i}</span>
+            `;
+            button.addEventListener('click', function() {
+              // Remove selected class from all buttons
+              document.querySelectorAll('.month-button').forEach(btn => {
+                btn.classList.remove('selected');
+              });
+              // Add selected class to clicked button
+              this.classList.add('selected');
+              selectedMonth = i;
+            });
+            monthButtonsGrid.appendChild(button);
+          }
+          selectedMonth = null; // Reset selection when duration changes
         }
         
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(formData.email)) {
-          const msg = window.i18n ? window.i18n.t('contact.form.validEmail') : 'Please enter a valid email address.';
-          alert(msg);
-          return;
+
+       
+        
+        // Update contribution value display with translation
+        function updateContributionDisplay() {
+          const value = currentContribution + ' OMR';
+          contributionValue.textContent = value;
         }
-        
-        // Here you would typically send the data to a server
-        // For now, we'll just show a success message
-        const msg = window.i18n ? window.i18n.t('contact.form.success') : 'Thank you for contacting us! We will get back to you soon.';
-        alert(msg);
-        
-        // Reset form
-        this.reset();
-      });
+
+        // Contribution slider event
+        contributionSlider.addEventListener('input', function() {
+          currentContribution = parseInt(this.value);
+          updateContributionDisplay();
+          updatePayout();
+        });
+
+       
+        // Initialize on page load
+        generateMonthButtons(currentDuration);
+        updatePayout();
+      })();
     </script>
     <!-- End custom js for this page-->
   </body>

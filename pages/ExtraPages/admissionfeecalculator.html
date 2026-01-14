@@ -212,7 +212,7 @@
               <!-- Monthly Contribution Section -->
               <div class="calculator-section">
                 <label class="calculator-label">Monthly Contribution (OMR)</label>
-                <div class="calculator-value" id="contributionValue">20 OMR</div>
+                <div class="calculator-value" id="contributionValue">10 OMR</div>
                 <div class="slider-container">
                   <span class="slider-min-value">5</span>
                   <input 
@@ -221,7 +221,7 @@
                     id="contributionSlider" 
                     min="5" 
                     max="100" 
-                    value="20" 
+                    value="10" 
                     step="5"
                   >
                 </div>
@@ -248,7 +248,7 @@
               <!-- Payout Month Section -->
               <div class="calculator-section">
                 <label class="calculator-label">Payout Month</label>
-                <div class="month-buttons-grid" id="monthButtonsGrid">
+                <div class="month-buttons-grid">
                   <!-- Month buttons will be generated dynamically -->
                 </div>
               </div>
@@ -256,7 +256,7 @@
               <!-- Payout Display -->
               <div class="payout-display">
                 <div class="payout-text">You will receive:</div>
-                <div class="payout-amount" id="payoutAmount">120 OMR</div>
+                <div class="payout-amount" id="payoutAmount">60 OMR</div>
               </div>
               <!-- Admission Fee Card -->
             <div class="admission-fee-card-container">
@@ -325,7 +325,7 @@
         const payoutAmount = document.getElementById('payoutAmount');
         
         let selectedMonth = null;
-        let currentContribution = 20;
+        let currentContribution = 10;
         let currentDuration = 6;
 
         // Initialize month buttons
@@ -355,8 +355,18 @@
           selectedMonth = null; // Reset selection when duration changes
         }
         
+        // Update month buttons when language changes
+        if (window.i18n) {
+          $(document).on('languageChanged', function() {
+            generateMonthButtons(currentDuration);
+          });
+        }
 
-       
+        // Calculate and update payout
+        function updatePayout() {
+          const total = currentContribution * currentDuration;
+          payoutAmount.textContent = total + ' OMR';
+        }
         
         // Update contribution value display with translation
         function updateContributionDisplay() {
@@ -371,7 +381,14 @@
           updatePayout();
         });
 
-       
+        // Duration slider event
+        durationSlider.addEventListener('input', function() {
+          currentDuration = parseInt(this.value);
+          durationValue.textContent = currentDuration;
+          generateMonthButtons(currentDuration);
+          updatePayout();
+        });
+
         // Initialize on page load
         generateMonthButtons(currentDuration);
         updatePayout();

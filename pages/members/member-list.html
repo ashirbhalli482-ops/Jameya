@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="notranslate">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google" content="notranslate">
+    <meta name="google-translate-customization" content="no">
     <title>Jameya Admin</title>
     <link rel="stylesheet" href="../../assets/vendors/feather/feather.css">
     <link rel="stylesheet" href="../../assets/vendors/ti-icons/css/themify-icons.css">
@@ -195,20 +197,123 @@
             </ul>
           </nav>
 
-       <!-- partial -->
-       <div class="main-panel">
-        <div class="content-wrapper">
-        </div>
-        <!-- content-wrapper ends -->
-        <!-- partial:../../partials/_footer.html -->
-        <footer class="footer">
-          <div class="text-center">
-            <span class="text-muted text-center text-primary" data-i18n="footer.copyright">Copyright © 2025 OpticoreAI.com</span>
-            
+          <div class="main-panel">
+            <div class="content-wrapper" style="background: #eceff8; padding: 1.5rem;">
+              <div class="bg-white p-3 p-md-4 rounded-3 mb-4 shadow-sm" style="border-radius: 16px !important;">
+                <!-- Header Section -->
+                <div class="row mb-4 align-items-center">
+                  <div class="col-12 col-md-6 mb-3 mb-md-0">
+                    <h3 class="mb-0 font-weight-bold" style="color: #2c3e50; font-size: clamp(1.25rem, 3vw, 1.75rem);">Members Management</h3>
+                    <p class="text-muted mb-0 mt-1" style="font-size: clamp(0.875rem, 2vw, 1rem);">Manage and view all registered members</p>
+                  </div>
+                  <div class="col-12 col-md-6 text-center text-md-end">
+                    <button type="button" class="btn btn-primary btn-lg" style="border-radius: 12px; padding: 0.75rem 1.5rem; font-weight: 600; box-shadow: 0 4px 12px rgba(75, 73, 172, 0.3);" onclick="window.location.href='member-register.html'">
+                      <i class="ti-plus me-2"></i> <span>Register New Member</span>
+                    </button> 
+                  </div>
+                </div>
+                
+                <hr style="margin: 1.5rem 0; opacity: 0.1;">
+  
+                <!-- Search and Filter Section -->
+                <div class="row mb-4 g-3">
+                  <div class="col-12 col-md-6 col-lg-4">
+                    <div class="position-relative">
+                      <i class="ti-search position-absolute" style="left: 15px; top: 50%; transform: translateY(-50%); color: #6c757d; z-index: 10;"></i>
+                      <input type="text" id="searchInput" class="form-control form-control-lg ps-5" style="border-radius: 12px; border: 2px solid #e9ecef; padding: 0.75rem 1rem 0.75rem 2.5rem;" placeholder="Search members...">
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <select id="statusFilter" class="form-control form-control-lg" style="border-radius: 12px; border: 2px solid #e9ecef; padding: 0.75rem 1rem;">
+                        <option value="">All Status</option>
+                      <option value="active">Active</option>
+                      <option value="withdrawn">Withdrawn</option>
+                      <option value="completed">Completed</option>
+                    </select>
+                  </div>
+                </div>
+  
+                <!-- Table Section -->
+                <div class="table-responsive" style="border-radius: 12px;">
+                  <table id="membersTable" class="table table-hover align-middle mb-0" style="margin-bottom: 0 !important;">
+                    <thead style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                      <tr>
+                        <th style="padding: 1rem; font-weight: 600; border: none;">Name</th>
+                        <th style="padding: 1rem; font-weight: 600; border: none;">Phone Number</th>
+                        <th class="d-none d-md-table-cell" style="padding: 1rem; font-weight: 600; border: none;">National ID</th>
+                        <th style="padding: 1rem; font-weight: 600; border: none;">Status</th>
+                        <th class="d-none d-lg-table-cell" style="padding: 1rem; font-weight: 600; border: none;">Groups</th>
+                          <th class="d-none d-xl-table-cell" style="padding: 1rem; font-weight: 600; border: none;">Created</th>
+                        <th style="padding: 1rem; font-weight: 600; border: none; text-align: center;">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody id="membersTableBody" style="background: white;">
+                      <tr>
+                        <td>Sir Laith Al-Shanfari</td>
+                        <td>+96891234567</td>
+                        <td class="d-none d-md-table-cell">1234567890</td>
+                        <td>Active</td>
+                        <td class="d-none d-lg-table-cell">Group A</td>
+                        <td class="d-none d-xl-table-cell">2024-01-15</td>
+                        <td><button class="btn btn-primary btn-sm">View</button></td>
+                      </tr>
+                      <tr>
+                        <td>Sir Awad Al-Shanfari</td>
+                        <td>+96892345678</td>
+                        <td class="d-none d-md-table-cell">2345678901</td>
+                        <td>Active</td>
+                        <td class="d-none d-lg-table-cell">Group B</td>
+                        <td class="d-none d-xl-table-cell">2024-02-20</td>
+                        <td><button class="btn btn-primary btn-sm">View</button></td>
+                      </tr>
+                      <tr>
+                        <td>Sir Haitham Al-Shanfari</td>
+                        <td>+96893456789</td>
+                        <td class="d-none d-md-table-cell">3456789012</td>
+                        <td>Withdrawn</td>
+                        <td class="d-none d-lg-table-cell">Group C</td>
+                        <td class="d-none d-xl-table-cell">2024-03-10</td>
+                        <td><button class="btn btn-primary btn-sm">View</button></td>
+                      </tr>
+                      <tr>
+                        <td>Engr. Ashir Ali</td>
+                        <td>+96894567890</td>
+                        <td class="d-none d-md-table-cell">4567890123</td>
+                        <td>Completed</td>
+                        <td class="d-none d-lg-table-cell">Group D</td>
+                        <td class="d-none d-xl-table-cell">2024-03-25</td>
+                        <td><button class="btn btn-primary btn-sm">View</button></td>
+                      </tr>
+                      
+                      
+                      <!-- Data will be loaded here -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+               <!-- Banner Images Section -->
+            <div class="row g-4 mt-2">
+              <div class="col-12 col-md-6">
+                <div class="banner-image-wrapper position-relative overflow-hidden rounded-4 shadow-lg">
+                  <img src="../../assets/images/bannerone.jpeg" alt="Jameya Banner One" class="img-fluid banner-image">
+                  <div class="banner-overlay"></div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="banner-image-wrapper position-relative overflow-hidden rounded-4 shadow-lg">
+                  <img src="../../assets/images/bannertwo.jpeg" alt="Jameya Banner Two" class="img-fluid banner-image">
+                  <div class="banner-overlay"></div>
+                </div>
+              </div>
+            </div>
+            </div>
+  
+            <footer class="footer">
+              <div class="text-center">
+                <span class="text-muted text-center text-primary" data-i18n="footer.copyright">Copyright © 2025 OpticoreAI.com</span>
+              </div>
+            </footer>
           </div>
-        </footer>
-        <!-- partial -->
-      </div>
       </div>
     </div>
 
@@ -225,6 +330,79 @@
     <script src="../../assets/js/app.js"></script>
     <script src="../../assets/js/jquery.cookie.js" type="text/javascript"></script>
     <script src="../../assets/js/i18n.js"></script>
+    
+    <style>
+      /* Enhanced table styling */
+      #membersTable tbody tr {
+        transition: all 0.3s ease;
+        border-bottom: 1px solid #f0f0f0;
+      }
+      
+      #membersTable tbody tr:hover {
+        background-color: #f8f9fa !important;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+      
+      #membersTable tbody td {
+        padding: 1rem !important;
+        vertical-align: middle;
+      }
+      
+      /* Responsive adjustments */
+      @media (max-width: 767.98px) {
+        .content-wrapper {
+          padding: 1rem !important;
+        }
+        
+        .btn-lg {
+          padding: 0.5rem 1rem !important;
+          font-size: 0.875rem !important;
+        }
+        
+        #membersTable thead th {
+          padding: 0.75rem 0.5rem !important;
+          font-size: 0.8rem !important;
+        }
+        
+        #membersTable tbody td {
+          padding: 0.75rem 0.5rem !important;
+          font-size: 0.875rem !important;
+        }
+      }
+      
+      /* DataTables responsive wrapper */
+      .dataTables_wrapper .dataTables_length,
+      .dataTables_wrapper .dataTables_filter,
+      .dataTables_wrapper .dataTables_info,
+      .dataTables_wrapper .dataTables_paginate {
+        margin-top: 1rem;
+      }
+      
+      .dataTables_wrapper .dataTables_filter input {
+        border-radius: 8px;
+        border: 2px solid #e9ecef;
+        padding: 0.5rem 1rem;
+      }
+      
+      .dataTables_wrapper .dataTables_length select {
+        border-radius: 8px;
+        border: 2px solid #e9ecef;
+        padding: 0.5rem;
+      }
+      
+      .dataTables_wrapper .dataTables_paginate .paginate_button {
+        border-radius: 8px;
+        margin: 0 2px;
+        padding: 0.5rem 0.75rem;
+      }
+      
+      .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        color: white !important;
+        border: none !important;
+      }
+    </style>
     
   </body>
 </html>

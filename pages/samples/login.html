@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="notranslate">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google" content="notranslate">
+    <meta name="google-translate-customization" content="no">
     <title>Jameya Admin</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="../../assets/vendors/feather/feather.css">
@@ -17,12 +19,181 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="../../assets/css/vertical-layout-light/style.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/i18n.css">
     <!-- endinject -->
     <!-- <link rel="shortcut icon" href="../../assets/images/favicon.png" /> -->
     <link rel="icon" href="data:,">
+    <style>
+      /* Language Switcher Styles */
+      .language-switcher .btn-group .btn {
+        border-radius: 0;
+        min-width: 60px;
+      }
+      .language-switcher .btn-group .btn:first-child {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+      }
+      .language-switcher .btn-group .btn:last-child {
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+      }
+      .language-switcher .btn-group .btn.active {
+        background-color: #4B49AC;
+        border-color: #4B49AC;
+        color: #fff;
+      }
+      .language-switcher .btn-group .btn:hover {
+        background-color: #4B49AC;
+        border-color: #4B49AC;
+        color: #fff;
+      }
+      @media (max-width: 576px) {
+        .language-switcher {
+          top: 10px !important;
+          right: 10px !important;
+          left: auto !important;
+        }
+        .rtl-content .language-switcher,
+        .rtl-body .language-switcher {
+          top: 10px !important;
+          right: 10px !important;
+          left: auto !important;
+        }
+        .language-switcher .btn-group .btn {
+          padding: 0.25rem 0.5rem;
+          font-size: 0.75rem;
+          min-width: 50px;
+        }
+      }
+      /* Keep language switcher LTR even in RTL mode and fix position */
+      .language-switcher {
+        direction: ltr !important;
+        text-align: left !important;
+        position: absolute !important;
+        top: 20px !important;
+        right: 20px !important;
+        left: auto !important;
+        z-index: 10;
+      }
+      .rtl-content .language-switcher,
+      .rtl-body .language-switcher,
+      .content-wrapper.rtl-content .language-switcher {
+        direction: ltr !important;
+        text-align: left !important;
+        position: absolute !important;
+        top: 20px !important;
+        right: 20px !important;
+        left: auto !important;
+      }
+      /* Keep logo centered and position fixed regardless of language */
+      .brand-logo {
+        direction: ltr !important;
+        text-align: center !important;
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+        width: 100% !important;
+      }
+      .rtl-content .brand-logo,
+      .rtl-body .brand-logo,
+      .content-wrapper.rtl-content .brand-logo {
+        direction: ltr !important;
+        text-align: center !important;
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+        width: 100% !important;
+      }
+      /* Ensure logo image is centered */
+      .brand-logo img {
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      .rtl-content .brand-logo img,
+      .rtl-body .brand-logo img,
+      .content-wrapper.rtl-content .brand-logo img {
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      /* RTL support for login form content only (not logo/buttons) */
+      .rtl-content .auth-form-light {
+        text-align: right;
+      }
+      .rtl-content .auth-form-light .form-group,
+      .rtl-content .auth-form-light .form-check-label {
+        text-align: right;
+      }
+      /* Ensure language switcher buttons stay in correct order */
+      .language-switcher .btn-group {
+        direction: ltr !important;
+        flex-direction: row !important;
+      }
+    </style>
   </head>
   <body>
-    
+    <div class="container-scroller">
+      <div class="container-fluid page-body-wrapper full-page-wrapper">
+        <div class="content-wrapper d-flex align-items-center auth px-0">
+          <div class="row w-100 mx-0">
+            <div class="col-lg-4 mx-auto">
+              <div class="auth-form-light text-left py-5 px-4 px-sm-5 position-relative">
+                <!-- Language Selection Button -->
+                <div class="language-switcher position-absolute">
+                  <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-sm btn-outline-primary" data-lang="en" title="English">
+                      <i class="mdi mdi-translate"></i> EN
+                    </button>
+                    <button type="button" class="btn btn-sm btn-outline-primary" data-lang="ar" title="العربية">
+                      <i class="mdi mdi-translate"></i> AR
+                    </button>
+                  </div>
+                </div>
+                <div class="brand-logo">
+                  <img src="../../assets/images/logo.png" alt="logo">
+                  <!-- Jameya -->
+                </div>
+                <h4>Hello! let's get started</h4>
+                <h6 class="font-weight-light">Sign in to continue.</h6>
+                <form class="pt-3">
+                  <div class="form-group">
+                    <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+                  <div class="mt-3 d-grid gap-2">
+                    <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">SIGN IN</a>
+                  </div>
+                  <div class="my-2 d-md-flex justify-content-between align-items-center">
+                    <div class="form-check">
+                      <label class="form-check-label text-muted">
+                        <input type="checkbox" class="form-check-input"> Keep me signed in</label>
+                    </div>
+                    <a href="#" class="auth-link text-black">Forgot password?</a>
+                  </div>
+                  <!-- <div class="mb-2 d-grid gap-2">
+                    <button type="button" class="btn btn-block btn-facebook auth-form-btn">
+                      <i class="ti-facebook me-2"></i>Connect using facebook </button>
+                  </div> -->
+                  <div class="text-center mt-4 font-weight-light"> Don't have an account? <a href="../samples/signup.html" class="text-primary">Create</a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
@@ -34,6 +205,27 @@
     <script src="../../assets/js/template.js"></script>
     <script src="../../assets/js/settings.js"></script>
     <script src="../../assets/js/todolist.js"></script>
+    <script src="../../assets/js/i18n.js"></script>
+    <script>
+      // Update active language button on page load and language change
+      function updateActiveLanguageButton() {
+        if (typeof window.i18n !== 'undefined') {
+          const currentLang = window.i18n.getCurrentLang();
+          $('.language-switcher [data-lang]').removeClass('active');
+          $('.language-switcher [data-lang="' + currentLang + '"]').addClass('active');
+        }
+      }
+      
+      // Update on page load
+      $(document).ready(function() {
+        updateActiveLanguageButton();
+        
+        // Update on language change
+        $(document).on('languageChanged', function(e, lang) {
+          updateActiveLanguageButton();
+        });
+      });
+    </script>
     <!-- endinject -->
   </body>
 </html>

@@ -51,6 +51,13 @@
   text-align: right;
 }
 
+/* Exclude footer from RTL rules - footer should always be centered */
+.rtl-content .footer,
+.rtl-content .footer * {
+  direction: ltr !important;
+  text-align: center !important;
+}
+
 /* But keep some elements LTR even in RTL content (like numbers, codes) */
 .rtl-content input[type="number"],
 .rtl-content .card-number,
@@ -60,6 +67,32 @@
 .rtl-content pre {
   direction: ltr;
   text-align: left;
+}
+
+/* Keep language switcher and logo fixed position regardless of RTL */
+.rtl-content .language-switcher,
+.rtl-content .language-switcher *,
+.rtl-body .language-switcher,
+.rtl-body .language-switcher * {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+/* Keep logo centered regardless of RTL */
+.rtl-content .brand-logo,
+.rtl-content .brand-logo *,
+.rtl-body .brand-logo,
+.rtl-body .brand-logo * {
+  direction: ltr !important;
+  text-align: center !important;
+}
+
+/* Ensure logo image stays centered */
+.rtl-content .brand-logo img,
+.rtl-body .brand-logo img {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 /* Ensure flexbox layouts in navbar/sidebar don't reverse */
@@ -162,7 +195,7 @@ html[dir="rtl"] .sidebar {
 .rtl-content h6,
 .rtl-content p,
 .rtl-content span,
-.rtl-content div:not(.navbar):not(.sidebar):not(.navbar *):not(.sidebar *) {
+.rtl-content div:not(.navbar):not(.sidebar):not(.navbar *):not(.sidebar *):not(.footer):not(.footer *) {
   direction: rtl;
   text-align: right;
 }
@@ -199,3 +232,106 @@ html[dir="rtl"] .sidebar {
   text-align: left !important;
 }
 
+/* Terms and Conditions Page - Ensure all text aligns right for Arabic */
+.rtl-content ul,
+.rtl-content ol,
+.rtl-content li,
+.rtl-content .list-unstyled,
+.rtl-content .list-unstyled li {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* Adjust list item margins for RTL */
+.rtl-content .list-unstyled.ms-3,
+.rtl-content ul.ms-3,
+.rtl-content ol.ms-3 {
+  margin-right: 1rem !important;
+  margin-left: 0 !important;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Ensure all headings align right */
+.rtl-content h1,
+.rtl-content h2,
+.rtl-content h3,
+.rtl-content h4,
+.rtl-content h5,
+.rtl-content h6,
+.rtl-content .h1,
+.rtl-content .h2,
+.rtl-content .h3,
+.rtl-content .h4,
+.rtl-content .h5,
+.rtl-content .h6 {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* Ensure all paragraphs and text content align right */
+.rtl-content p,
+.rtl-content .text-muted,
+.rtl-content .text-dark,
+.rtl-content .text-primary,
+.rtl-content span:not(.navbar *):not(.sidebar *):not(.footer *):not(.footer) {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* Ensure list item icons are positioned correctly for RTL */
+.rtl-content li i.ti-angle-right {
+  margin-right: 0.5rem !important;
+  margin-left: 0 !important;
+  transform: scaleX(-1); /* Flip the arrow icon for RTL */
+}
+
+/* Ensure all divs in content area align right (except navbar/sidebar) */
+.rtl-content .bg-white,
+.rtl-content .rounded-3,
+.rtl-content .shadow-sm,
+.rtl-content .row,
+.rtl-content .col-12,
+.rtl-content .col-md-12,
+.rtl-content .mb-4,
+.rtl-content .mb-5,
+.rtl-content .mb-3,
+.rtl-content .mb-2,
+.rtl-content .mb-0,
+.rtl-content .mt-3,
+.rtl-content .p-4,
+.rtl-content .p-md-5 {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* Ensure hr elements work correctly in RTL */
+.rtl-content hr {
+  direction: rtl !important;
+}
+
+/* Override any Bootstrap text alignment utilities that might interfere */
+.rtl-content .text-start {
+  text-align: right !important;
+}
+
+.rtl-content .text-left {
+  text-align: right !important;
+}
+
+/* Footer should always be centered regardless of language */
+.footer,
+.footer *,
+.rtl-content .footer,
+.rtl-content .footer *,
+body.rtl-body .footer,
+body.rtl-body .footer * {
+  direction: ltr !important;
+  text-align: center !important;
+}
+
+/* Ensure all content wrapper children align right (except footer) */
+.rtl-content .content-wrapper > *:not(.footer) {
+  direction: rtl !important;
+  text-align: right !important;
+}

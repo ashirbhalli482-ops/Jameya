@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="notranslate">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google" content="notranslate">
+    <meta name="google-translate-customization" content="no">
     <title>Jameya Admin</title>
     <link rel="stylesheet" href="../../assets/vendors/feather/feather.css">
     <link rel="stylesheet" href="../../assets/vendors/ti-icons/css/themify-icons.css">
@@ -22,7 +24,7 @@
           <img src="../../assets/images/logo.png" alt="logo" />
           <!-- Jameya -->
         </a>
-        <a class="navbar-brand brand-logo-mini ps-0 me-5 href="../../index.html">
+        <a class="navbar-brand brand-logo-mini ps-0 me-5" href="../../index.html">
           <img src="../../assets/images/logo.png" alt="logo" /> 
           <!-- Jameya -->
         </a>
@@ -200,8 +202,8 @@
             <div class="bg-white p-4 rounded-1 mb-4">
               <div class="row mb-4">
                 <div class="col-12">
-                  <h3 class="mb-0 font-weight-bold" id="pageTitle">Register New Member</h3>
-                  <p class="text-muted">Fill in the member information below</p>
+                  <h3 class="mb-0 font-weight-bold" id="pageTitle" data-i18n="member.registerNewMember">Register New Member</h3>
+                  <p class="text-muted" data-i18n="member.fillMemberInformation">Fill in the member information below</p>
                 </div>
               </div>
               <hr>
@@ -210,15 +212,15 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="memberName">Full Name <span class="text-danger">*</span></label>
+                      <label for="memberName"><span data-i18n="member.fullName">Full Name</span> <span class="text-danger">*</span></label>
                       <input type="text" class="form-control" id="memberName" required>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="phoneNumber">Phone Number <span class="text-danger">*</span></label>
+                      <label for="phoneNumber"><span data-i18n="member.phoneNumber">Phone Number</span> <span class="text-danger">*</span></label>
                       <input type="tel" class="form-control" id="phoneNumber" required>
-                      <small class="form-text text-muted">Format: +968XXXXXXXX</small>
+                      <small class="form-text text-muted" data-i18n="member.phoneNumberFormat">Format: +968XXXXXXXX</small>
                     </div>
                   </div>
                 </div>
@@ -226,27 +228,28 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="nationalId">National ID</label>
+                      <label for="nationalId" data-i18n="member.nationalId">National ID</label>
                       <input type="text" class="form-control" id="nationalId">
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="email">Email Address</label>
+                      <label for="email" data-i18n="member.emailAddress">Email Address</label>
                       <input type="email" class="form-control" id="email">
                     </div>
                   </div>
                 </div>
+
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="password">Password</label>
+                      <label for="password" data-i18n="member.password">Password</label>
                       <input type="password" class="form-control" id="password">
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="confirmPassword">Confirm Password</label>
+                      <label for="confirmPassword" data-i18n="member.confirmPassword">Confirm Password</label>
                       <input type="password" class="form-control" id="confirmPassword">
                     </div>
                   </div>
@@ -255,11 +258,11 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="status">Status <span class="text-danger">*</span></label>
+                      <label for="status"><span data-i18n="member.status">Status</span> <span class="text-danger">*</span></label>
                       <select class="form-control" id="status" required>
-                        <option value="active">Active</option>
-                        <option value="withdrawn">Withdrawn</option>
-                        <option value="completed">Completed</option>
+                        <option value="active" data-i18n="member.statusActive">Active</option>
+                        <option value="withdrawn" data-i18n="member.statusWithdrawn">Withdrawn</option>
+                        <option value="completed" data-i18n="member.statusCompleted">Completed</option>
                       </select>
                     </div>
                   </div>
@@ -268,17 +271,15 @@
                 <div class="row mt-4">
                   <div class="col-12">
                     <button type="submit" class="btn btn-primary btn-sm">
-                      <i class="ti-save"></i> Save Member
+                      <i class="ti-save"></i> <span data-i18n="member.saveMember">Save Member</span>
                     </button>
                     <a href="member-list.html" class="btn btn-secondary btn-sm">
-                      <i class="ti-close"></i> Cancel
+                      <i class="ti-close"></i> <span data-i18n="member.cancel">Cancel</span>
                     </a>
                   </div>
                 </div>
               </form>
             </div>
-
-            
             <!-- Banner Images Section -->
             <div class="row g-4 mt-2">
               <div class="col-12 col-md-6">
@@ -298,7 +299,7 @@
 
           <footer class="footer">
             <div class="text-center">
-              <span class="text-muted text-center text-primary">Copyright © 2025 OpticoreAI.com</span>
+              <span class="text-muted text-center text-primary" data-i18n="footer.copyright">Copyright © 2025 OpticoreAI.com</span>
             </div>
           </footer>
         </div>
